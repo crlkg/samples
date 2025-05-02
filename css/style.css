@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "reset.css";
+@import "variables.css";
+
+@import "header.css";
+@import "footer.css";
+@import "main.css";
+
+body {
+  position: relative;
+  height: 100vh;
+  color: #2e363e;
+  font-family: "Open Sans", sans-serif;
+  font-size: clamp(16px, 1.25vw, 20px);
+}

@@ -1,0 +1,103 @@
+.header {
+  width: 100%;
+}
+
+.header__inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--common-pd) var(--common-pd);
+  box-sizing: border-box;
+}
+
+.header__nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+.header__mobile,
+.header__mobile-toggle,
+.header__mobile-nav__wrap {
+  display: none;
+}
+
+/* 태블릿 대응: 1024px 이하 */
+@media (max-width: 1024px) {
+  /* 예: 메뉴 간격 줄이기, 폰트 작게 */
+}
+
+/* 모바일 대응: 768px 이하 */
+@media (max-width: 768px) {
+  /* 예: flex → block 전환, 햄버거 메뉴 */
+  .header__nav {
+    display: none;
+  }
+
+  .header__mobile {
+    display: block;
+  }
+
+  .header__mobile-toggle {
+    display: block;
+    background: none;
+    border: none;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+  }
+
+  .header__mobile-toggle span {
+    display: block;
+    height: 2px;
+    background: #000;
+    margin: 4px 0;
+    border-radius: 2px;
+  }
+
+  .header__mobile-nav__wrap {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #aecffa;
+    z-index: 100;
+  }
+
+  .header__mobile-nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .header__mobile-close {
+    position: absolute;
+    right: var(--common-pd);
+    top: var(--common-pd);
+    cursor: pointer;
+  }
+
+  .header__mobile-nav__wrap.active {
+    display: block;
+  }
+  
+}
+
+/* 초소형 모바일 대응: 480px 이하 */
+@media (max-width: 480px) {
+  /* 예: 글자 크기, 버튼 크기 더 줄이기 */
+}
+
+@media (min-width: 1024px) {
+  /* 노트북/데스크탑 */
+}
+
+@media (min-width: 1440px) {
+  /* 큰 데스크탑, 와이드 화면 */
+}

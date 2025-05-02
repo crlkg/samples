@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sample</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="#" class="logo">logo</a>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="#section01">menu01</a></li>
+          <li><a href="#section02">menu02</a></li>
+          <li><a href="#section03">menu03</a></li>
+        </ul>
+      </nav>
+      <div class="header__mobile">
+        <button class="header__mobile-toggle" type="button" aria-label="모바일 메뉴 열기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="header__mobile-nav__wrap">
+          <ul class="header__mobile-nav">
+            <li><a href="#section01">menu01</a></li>
+            <li><a href="#section02">menu02</a></li>
+            <li><a href="#section03">menu03</a></li>
+          </ul>
+          <button class="header__mobile-close" type="button" aria-label="모바일 메뉴 닫기">X</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="wrapper">
+    <section class="section section01">
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./images/img_sample.png" alt="sample img"></div>
+        <div class="swiper-slide"><img src="./images/img_sample.png" alt="sample img"></div>
+        <div class="swiper-slide"><img src="./images/img_sample.png" alt="sample img"></div>
+        <div class="swiper-slide"><img src="./images/img_sample.png" alt="sample img"></div>
+      </div>
+      <!-- 페이징 -->
+      <div class="swiper-pagination"></div>
+
+      <!-- 좌우 버튼 -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    </section>
+    <section class="section section02">
+      <div class="common-inner">
+        <h3 class="section__title">소개</h3>
+        <p class="section__desc">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+      </div>
+    </section>
+    <section class="section section03">
+      <div class="common-inner">
+        <h3 class="section__title">소개</h3>
+        <p class="section__desc">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__info">
+        <h2 class="footer__logo">MyCompany</h2>
+        <p class="footer__desc">
+          서울시 어딘가 123-45<br>
+          사업자등록번호: 123-45-67890<br>
+          © 2025 MyCompany. All rights reserved.
+        </p>
+      </div>
+  
+      <div class="footer__menu">
+        <ul>
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">고객센터</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer__sns">
+        <a href="#" aria-label="Instagram">인스타그램</a>
+        <a href="#" aria-label="Facebook">페이스북</a>
+        <a href="#" aria-label="YouTube">유튜브</a>
+        <a href="#" aria-label="Twitter">트위터</a>
+      </div>
+    </div>
+  </footer>  
+
+  <script>
+  const toggleBtn = document.querySelector('.header__mobile-toggle');
+  const navWrap = document.querySelector('.header__mobile-nav__wrap');
+  const closeBtn = document.querySelector('.header__mobile-close');
+
+  toggleBtn.addEventListener('click', () => {
+    navWrap.classList.toggle('active');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    navWrap.classList.remove('active');
+  });
+
+
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      spaceBetween: 20, // 슬라이드 간 간격(px)
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
+  </script>
+  
+  
+</body>
+</html>
