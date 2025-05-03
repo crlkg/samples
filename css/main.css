@@ -1,4 +1,7 @@
 
+  html {
+    scroll-behavior: smooth;
+  }
   
   /* main-visual */
   .section01 .swiper {
