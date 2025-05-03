@@ -11,7 +11,7 @@
 <body>
   <header class="header">
     <div class="header__inner">
-      <a href="#" class="logo">logo</a>
+      <a href="#" class="logo"><img src="/images/logo.svg" alt="Sample Logo"></a>
       <nav class="header__nav">
         <ul>
           <li><a href="#section01">menu01</a></li>
@@ -41,10 +41,10 @@
     <!-- Swiper -->
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="./images/img_sample.png" alt="sample img"></div>
-        <div class="swiper-slide"><img src="./images/img_sample.png" alt="sample img"></div>
-        <div class="swiper-slide"><img src="./images/img_sample.png" alt="sample img"></div>
-        <div class="swiper-slide"><img src="./images/img_sample.png" alt="sample img"></div>
+        <div class="swiper-slide"><img src="./images/slide_01.png" alt="slide 01"></div>
+        <div class="swiper-slide"><img src="./images/slide_02.png" alt="slide 02"></div>
+        <div class="swiper-slide"><img src="./images/slide_03.png" alt="slide 03"></div>
+        <div class="swiper-slide"><img src="./images/slide_01.png" alt="slide 01"></div>
       </div>
       <!-- 페이징 -->
       <div class="swiper-pagination"></div>
@@ -56,18 +56,22 @@
     </section>
     <section class="section section02">
       <div class="common-inner">
-        <h3 class="section__title">소개</h3>
-        <p class="section__desc">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
+        <div class="text-box">
+          <h3 class="section__title delay" data-delay="0.3">소개</h3>
+          <p class="section__desc delay" data-delay="1">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+        </div>
       </div>
     </section>
     <section class="section section03">
       <div class="common-inner">
-        <h3 class="section__title">소개</h3>
-        <p class="section__desc">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
+        <div class="text-box">
+          <h3 class="section__title delay" data-delay="0.3">소개</h3>
+          <p class="section__desc delay" data-delay="1">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+        </div>
       </div>
     </section>
   </main>
@@ -130,6 +134,20 @@
         disableOnInteraction: false,
       },
     });
+
+    const sections = document.querySelectorAll('.section');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      } else {
+        entry.target.classList.remove('show');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(sec => io.observe(sec));
+
   </script>
   
 </body>
