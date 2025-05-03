@@ -21,6 +21,10 @@
     object-fit: cover;
   }
 
+  .section01 .swiper .swiper-pagination {
+    bottom: var(--common-pd);
+  }
+
   .common-inner {
     padding: 0 var(--common-pd);
   }

@@ -97,9 +97,58 @@
 
   .header__mobile-close {
     position: absolute;
-    right: var(--common-pd);
-    top: var(--common-pd);
+    right: 15px;
+    top: 33px;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
+  }
+  
+  .header__mobile-close::before,
+  .header__mobile-close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #000;
+    transform-origin: center;
+  }
+  
+  .header__mobile-close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  .header__mobile-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }  
+
+  .close-button {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  
+  .close-button::before,
+  .close-button::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    transform-origin: center;
+  }
+  
+  .close-button::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  .close-button::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 
   .header__mobile-nav__wrap.active {
